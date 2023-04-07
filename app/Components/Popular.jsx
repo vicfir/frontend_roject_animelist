@@ -1,11 +1,13 @@
 import Image from "next/image";
-import { RiEmotionHappyLine } from "react-icons/ri"
+import { RiEmotionHappyLine } from "react-icons/ri";
+import Search from "./Search";
 
 async function getAnimes(filter) {
-    const res = await fetch(`https://api.jikan.moe/v4/${filter}`);
-    const data = await res.json();
-    const result = data.data;
-    // console.log(result[0].title);
+  
+  const res = await fetch(`https://api.jikan.moe/v4/${filter}`);
+  const data = await res.json();
+  const result = data.data;
+  // console.log(result[0].title);
   return result
 
 }
@@ -38,6 +40,7 @@ export default async function Animes() {
 
   return (
     <div className="max-w-6xl mx-auto">
+      <Search />
         <div className="pSect">
           <h2>TRENDING NOW</h2>
           <div className="pRow">
