@@ -5,14 +5,14 @@ import { TbMathGreater } from "react-icons/tb";
 
 export default function Intro() {
   return (
-    <div id="intro" className="my-10 py-8 max-w-6xl mx-auto">
+    <div id="intro" className="my-10 py-8 max-w-5xl mx-auto">
         <div className="text-center">
           <h2 className="font-bold text-3xl my-3">The next-generation anime platform</h2>
           <h3 className="text-xl mx-auto pb-10 max-w-md">Track, share, and discover your favorite anime and manga with AniList.</h3>
         </div>
 
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 max-w-6xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 max-w-5xl">
             <div className="flex px-4 my-8">
               <div className="shrink-0">
                 <Image alt="icone" src="stats.svg" width={100} height={100} />

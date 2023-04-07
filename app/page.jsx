@@ -1,5 +1,5 @@
 import Intro from "./Components/Intro";
-import Animes from "./Components/Animes";
+import Animes from "./Components/Popular";
 
 export default function Home() {
   return (

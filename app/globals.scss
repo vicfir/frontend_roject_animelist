@@ -60,3 +60,76 @@
         margin: 5px;
     }
 }
+
+.pSect{
+    margin: 30px 0;
+
+    h2{
+        font-weight: bold;
+        color: rgb(100 116 139);
+        margin: 10px 0;
+    }
+
+    .pRow{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .pAff{
+            width: 15%;
+
+            .affImg{
+                height: 20vw;
+                max-height: 240px;
+                overflow: hidden;
+                border-radius: 5px;
+                position: relative;
+                box-shadow: 0px 0px 10px 0px rgba(0, 6, 37, 0.4);
+                
+                img{
+                    height: auto;
+                    width: auto;
+                    position: absolute;
+                    bottom: 0;
+                    
+                }
+            }
+
+            .affTitle{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+
+                font-weight: 600;
+                color: rgb(100 116 139);
+                margin-top: 10px;
+                
+            }
+        }
+    }
+}
+
+.tSect{
+    .topB{
+        color: rgb(100 116 139); 
+        font-weight: 600;
+    }
+
+    .topL{
+        color: rgb(161, 175, 197);
+        font-weight: 700;
+        font-size: 12px;
+    }
+}
+
+footer{
+    a{
+        margin: 10px 0;
+        cursor: pointer;
+    }
+
+    a:hover{
+        color: rgb(30, 165, 255);
+    }
+}
