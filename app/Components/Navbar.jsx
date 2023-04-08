@@ -10,7 +10,15 @@ export default function Navbar() {
           </Link>
           <div className="flex w-[55%]">
             <div className="flex mr-12">
-                <p>Search</p>
+                <div className="relative">
+                  <Link href="search/anime" className="peer">Search</Link>
+                  <div className="hidden peer-hover:flex hover:flex flex-col absolute bg-white text-black">
+                    <Link href="search/anime">Anime</Link>
+                    <Link href="search/manga">Manga</Link>
+                  </div>
+
+                </div>
+
                 <p>Social</p>
                 <p>Forum</p>
             </div>
@@ -23,3 +31,4 @@ export default function Navbar() {
     </nav>
   )
 }
+

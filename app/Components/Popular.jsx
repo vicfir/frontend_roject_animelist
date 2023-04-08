@@ -12,11 +12,11 @@ async function getAnimes(filter) {
 
 }
 
-export default async function Animes() {
-    const trending = await getAnimes("top/anime?filter=airing");
-    const upcoming = await getAnimes("seasons/upcoming");
-    const popular = await getAnimes("top/anime?filter=bypopularity");
-    const top = await getAnimes("top/anime");
+export default async function Animes({ animeOrManga }) {
+    const trending = await getAnimes(animeOrManga === "manga" ? "top/manga?filter=publishing" :`top/anime?filter=airing`);
+    const upcoming = await getAnimes(`seasons/upcoming`);
+    const popular = await getAnimes(animeOrManga === "manga" ? `top/manga?filter=bypopularity` : `top/anime?filter=bypopularity`);
+    const top = await getAnimes(animeOrManga === "manga" ? `top/manga` : `top/anime`);
 
     const toMonth = (monthNumber) => {
 
@@ -34,7 +34,7 @@ export default async function Animes() {
           return("Autumn");
       
         default:
-          break;
+          break; 
       }
     };
 
@@ -47,7 +47,7 @@ export default async function Animes() {
             {trending && trending.map((anime, index) => index < 6 &&(
                 <div key={anime.mal_id} className="pAff">
                     <div className="affImg">
-                      <Image src={anime.images.webp.image_url} width={200} height={200}/>
+                      <Image src={anime.images.webp.image_url} alt="anime image" width={200} height={200}/>
                     </div>
                     <p className="affTitle">{anime.title}</p>
                 </div>
@@ -55,19 +55,19 @@ export default async function Animes() {
           </div>
         </div>
 
-        <div className="pSect">
+        {animeOrManga != "manga" ? <div className="pSect">
           <h2>UPCOMING NEXT SEASON</h2>
           <div className="pRow">
             {upcoming && upcoming.map((anime, index) => index < 6 &&(
                 <div key={anime.mal_id} className="pAff">
                     <div className="affImg">
-                      <Image src={anime.images.webp.image_url} width={200} height={200}/>
+                      <Image src={anime.images.webp.image_url} alt="anime image" width={200} height={200}/>
                     </div>
                     <p className="affTitle">{anime.title}</p>
                 </div>
             ))}
           </div>
-        </div>
+        </div> : null}
 
         <div className="pSect">
           <h2>ALL TIME POPULAR</h2>
@@ -75,7 +75,7 @@ export default async function Animes() {
             {popular && popular.map((anime, index) => index < 6 &&(
                 <div key={anime.mal_id} className="pAff">
                     <div className="affImg">
-                      <Image src={anime.images.webp.image_url} width={200} height={200}/>
+                      <Image src={anime.images.webp.image_url} alt="anime image" width={200} height={200}/>
                     </div>
                     <p className="affTitle">{anime.title}</p>
                 </div>
@@ -93,7 +93,7 @@ export default async function Animes() {
                 <div className="flex justify-between w-full bg-white shadow-md p-2 rounded-md">
                   <div className="flex w-1/2 items-center">
                     <div className="">
-                      <Image src={anime.images.webp.image_url} width={45} height={45} className="rounded-sm mr-2"/>
+                      <Image src={anime.images.webp.image_url} alt="anime image" width={45} height={45} className="rounded-sm mr-2"/>
                     </div>
 
                     <div>
@@ -120,7 +120,7 @@ export default async function Animes() {
                     </div>
                     <div>
                       {/* <p className="topB">{toMonth(anime.aired.from.slice(5, 7))} {anime.aired.from.slice(0, 4)}</p> */}
-                      <p className="topB">{toMonth(anime.aired.from.slice(5, 7))} {anime.aired.from.slice(0, 4)}</p>
+                      <p className="topB">{animeOrManga === "manga" ? (toMonth(anime.published.from.slice(5, 7)) + " " + anime.published.from.slice(0, 4)) : toMonth(anime.aired.from.slice(5, 7)) + " " + anime.aired.from.slice(0, 4)} </p>
                       <p className="topL">{anime.status === "Currently Airing" ? "Airing" : "Finished"}</p>
                     </div>
                   </div>
