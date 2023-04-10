@@ -40,7 +40,7 @@ export default async function Animes({ animeOrManga }) {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <Search />
+      <Search animeOrManga = "anime"/>
         <div className="pSect">
           <h2>TRENDING NOW</h2>
           <div className="pRow">
