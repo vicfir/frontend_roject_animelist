@@ -2,13 +2,14 @@
 import Link from "next/link";
 
 
-import { setUser, signup } from "../../redux/features/signupSlice";
+// import { setUser, signup } from "../../redux/features/signupSlice";
 import { useAppDispatch, useAppSelector } from "u@/redux/hookndefined";
 
 export default function SignUp() {
-  // const usersData = users;
+
 
   const dispatch = useAppDispatch();
+  const user = useAppSelector(state => state.signup);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,7 +25,7 @@ export default function SignUp() {
 
   return (
     <div id="signup" className="h-screen">
-      {/* <p>{usersData[1].email}</p> */}
+      <p>{user.email}</p>
         <div className="flex flex-col items-center bg-white max-w-sm mx-auto mt-12 py-6 rounded-lg">
           <h2 className="font-bold text-2xl text-slate-500 my-8">Sign up to AniList</h2>
           <form className="flex flex-col items-center w-full" onSubmit={handleSubmit} >
