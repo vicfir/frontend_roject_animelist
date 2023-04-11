@@ -37,19 +37,19 @@ export default function Search({ animeOrManga }) {
   }
 
   return (
-    <div className="flex">
+    <div className="flex justify-between max-w-6xl">
       <div>
         <p>Search</p>
-        <input type="search" placeholder="" value={search} onChange={handleSubmit} />
+        <input type="search" placeholder="" value={search} onChange={handleSubmit} className="shadow-md"/>
       </div>
 
-      <div>
+      <div className="searchFilter">
         <p>Genres</p>
-        <div>
+        <div className="filterInput shadow-md">
           <input type="text" />
           <AiOutlineDown />
         </div>
-        <div className="overflow-auto h-40 w-full bg-white flex flex-col">
+        <div className="dropDown overflow-auto h-40 w-full bg-white flex flex-col shadow-md">
           {error ? (
             <p>{error}</p>
           ) : (
@@ -64,14 +64,15 @@ export default function Search({ animeOrManga }) {
           )}
         </div>
       </div>
+    
 
-      <div>
+      <div className="searchFilter">
         <p>Year</p>
-        <div>
+        <div className="filterInput shadow-md">
           <input type="text" />
           <AiOutlineDown />
         </div>
-        <div className="overflow-auto h-40 w-full bg-white flex flex-col">
+        <div className="dropDown overflow-auto h-40 w-full bg-white flex flex-col shadow-md">
           {Array(62)
             .fill()
             .map((_, index) => (
@@ -85,13 +86,36 @@ export default function Search({ animeOrManga }) {
         </div>
       </div>
 
-      <div>
+      <div className="searchFilter">
+        <p>Season</p>
+        <div className="filterInput shadow-md">
+          <input type="text" />
+          <AiOutlineDown />
+        </div> 
+        <div className="dropDown overflow-auto h-40 w-full bg-white flex flex-col shadow-md">
+          {/* {error ? (
+            <p>{error}</p>
+          ) : (
+            genres.map((genre) => (
+              <Link
+                href={`search/${animeOrManga}?genres=${genre.mal_id}`}
+                key={genre.mal_id}
+              >
+                {genre.name}
+              </Link>
+            ))
+          )} */}
+        </div>
+
+      </div>
+
+      <div className="searchFilter">
         <p>Airing Status</p>
-        <div>
+        <div className="filterInput shadow-md">
           <input type="text" />
           <AiOutlineDown />
         </div>
-        <div className="w-full bg-white flex flex-col">
+        <div className="dropDown w-full bg-white flex flex-col shadow-md">
           <Link href={`search/${animeOrManga}?airing=airing`}>Airing</Link>
           <Link href={`search/${animeOrManga}?airing=upcoming`}>Upcoming</Link>
         </div>

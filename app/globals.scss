@@ -88,7 +88,7 @@
                 
                 img{
                     height: auto;
-                    width: auto;
+                    width: 100%;
                     position: absolute;
                     bottom: 0;
                     
@@ -122,6 +122,32 @@
         font-size: 12px;
     }
 }
+
+.searchFilter{
+    
+    p{
+
+    }
+
+    .filterInput{
+        background-color: white;
+        display: flex;
+        border-radius: 10px;
+        padding: 5px;
+        overflow: hidden;
+    }
+
+    .dropDown{
+        border-radius: 10px;
+    }
+
+    .dropDown>*{
+        margin: 8px 0;
+        font-weight: 600;
+        padding: 0 10px;
+    }
+}
+ 
 
 footer{
     a{

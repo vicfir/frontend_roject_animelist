@@ -1,0 +1,21 @@
+[
+    {
+      "email": "user1@example.com",
+      "username": "user1",
+      "password": "password1",
+      "favorites": ["item1", "item2", "item3"]
+    },
+    {
+      "email": "user2@example.com",
+      "username": "user2",
+      "password": "password2",
+      "favorites": ["item4", "item5"]
+    },
+    {
+      "email": "user3@example.com",
+      "username": "user3",
+      "password": "password3",
+      "favorites": ["item2", "item5", "item6"]
+    }
+  ]
+  

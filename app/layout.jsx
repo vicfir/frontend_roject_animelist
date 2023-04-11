@@ -1,6 +1,8 @@
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import './globals.scss'
+import { Providers } from '../redux/provider'
+
 
 export const metadata = {
   title: 'AniList',
@@ -12,11 +14,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className='bg-slate-200'>
 
-        <Navbar />
+        <Providers>
+          <Navbar />
 
-        {children}
+          {children}
 
-        <Footer />
+          <Footer />
+        </Providers>
         
       </body>
     </html>

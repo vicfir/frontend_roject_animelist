@@ -100,7 +100,7 @@ export default async function Animes({ animeOrManga }) {
                       <p className="font-semibold text-slate-500">{anime.title}</p>
                       <div className="flex">
                         {anime.genres.map((genre) => (
-                          <p className="mx-1 my-2 border rounded-xl px-2 text-sm text-slate-400">{genre.name.toLowerCase()}</p>
+                          <p className="mx-1 my-2 border rounded-xl px-2 text-sm text-slate-400 whitespace-nowrap flex flex-wrap">{genre.name.toLowerCase()}</p>
                         ))}
                       </div>
                     </div>
