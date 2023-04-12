@@ -13,8 +13,9 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'google.com',
+        hostname: 'img.youtube.com',
         port: '',
+        // pathname: '/account123/**',
       }
     ],
   },

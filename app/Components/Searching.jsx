@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Search from "./Search";
 import Image from "next/image";
 
@@ -31,39 +32,39 @@ export default async function Searching({ animeOrManga , search }) {
       <div className="pSect">
         <div className="pRow">
           {search.hasOwnProperty("genres") && genre && genre.map((item) => (
-            <div key={item.mal_id} className="pAff">
+            <Link href={`anime/${item.mal_id}`} key={item.mal_id} className="pAff">
               <div className="affImg">
                 <Image src={item.images.webp.image_url} alt="anime image" width={200} height={200}/>
               </div>
               <p className="affTitle">{item.title}</p>
-            </div>
+            </Link>
           ))}
 
           {search.hasOwnProperty("year") && year && year.map((item) => (
-            <div key={item.mal_id} className="pAff">
+            <Link href={`anime/${item.mal_id}`} key={item.mal_id} className="pAff">
               <div className="affImg">
                 <Image src={item.images.webp.image_url} alt="anime image" width={200} height={200}/>
               </div>
               <p className="affTitle">{item.title}</p>
-            </div>
+            </Link>
           ))}
 
           {search.hasOwnProperty("airing") && airing && airing.map((item) => (
-            <div key={item.mal_id} className="pAff">
+            <Link href={`anime/${item.mal_id}`} key={item.mal_id} className="pAff">
               <div className="affImg">
                 <Image src={item.images.webp.image_url} alt="anime image" width={200} height={200}/>
               </div>
               <p className="affTitle">{item.title}</p>
-            </div>
+            </Link>
           ))}
 
           {search.hasOwnProperty("search") && searchTxt && searchTxt.map((item) => (
-            <div key={item.mal_id} className="pAff">
+            <Link href={`anime/${item.mal_id}`} key={item.mal_id} className="pAff">
               <div className="affImg">
                 <Image src={item.images.webp.image_url} alt="anime image" width={200} height={200}/>
               </div>
               <p className="affTitle">{item.title}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

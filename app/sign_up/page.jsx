@@ -1,15 +1,14 @@
 "use client"
 import Link from "next/link";
-
-
-// import { setUser, signup } from "../../redux/features/signupSlice";
+import { useRouter } from 'next/navigation';
+import { setUser } from "u@/redux/features/signupSlicendefined";
 import { useAppDispatch, useAppSelector } from "u@/redux/hookndefined";
 
 export default function SignUp() {
-
-
   const dispatch = useAppDispatch();
-  const user = useAppSelector(state => state.signup);
+  // const userEmail = useAppSelector(state => state.signupReducer.email);
+
+  const router = useRouter();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,22 +16,31 @@ export default function SignUp() {
     const email = event.target.email.value;
     const name = event.target.name.value;
     const password = event.target.password.value;
+    const confirmPassword = event.target.confirmPassword.value;
+    const agree = event.target.agree.checked;
 
-    dispatch(setUser({ email, name, password }));
-
-   
+    if (email && name && password && password === confirmPassword && agree) {
+      dispatch(setUser({ email, name, password }));
+      router.push('/login')
+    } else if (password !== confirmPassword) {
+      alert("Difference between passwords")
+    } else if (!email || !name || !password || !confirmPassword) {
+      alert("Please fill out all fields")
+    } else if (!agree) {
+      alert("Please agree to our terms of service")
+    }
   };
 
   return (
     <div id="signup" className="h-screen">
-      <p>{user.email}</p>
+      {/* <p>{userEmail}</p> */}
         <div className="flex flex-col items-center bg-white max-w-sm mx-auto mt-12 py-6 rounded-lg">
           <h2 className="font-bold text-2xl text-slate-500 my-8">Sign up to AniList</h2>
           <form className="flex flex-col items-center w-full" onSubmit={handleSubmit} >
               <input type="text" name="email" placeholder="Email"/>
               <input type="text" name="name" placeholder="Username" />
               <input type="text" name="password" placeholder="Password"/>
-              <input type="text" placeholder="Confirm Pasword"/>
+              <input type="text" name="confirmPassword" placeholder="Confirm Pasword"/>
 
               <div className=" text-slate-500 text-sm my-6">
                 <input type="checkbox" name="agree"/>

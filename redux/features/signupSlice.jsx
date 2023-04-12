@@ -5,10 +5,15 @@ export const signup = createSlice({
     initialState: [],
     reducers: {
         setUser: (state, action) => {
-            state.push({email: action.payload.email, name: action.payload.name, password: action.payload.password, favorite : []})
+            state.push({
+                email: action.payload.email,
+                name: action.payload.name, 
+                password: action.payload.password, 
+                favorite : []
+            })
         }
     }
 });
 
-export const {setUser} =  signup.actions;
+export const { setUser } =  signup.actions;
 export default signup.reducer;

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { RiEmotionHappyLine } from "react-icons/ri";
 import Search from "./Search";
+import Link from "next/link";
 
 async function getAnimes(filter) {
   
@@ -45,12 +46,12 @@ export default async function Animes({ animeOrManga }) {
           <h2>TRENDING NOW</h2>
           <div className="pRow">
             {trending && trending.map((anime, index) => index < 6 &&(
-                <div key={anime.mal_id} className="pAff">
+                <Link href={`anime/${anime.mal_id}`} key={anime.mal_id} className="pAff">
                     <div className="affImg">
                       <Image src={anime.images.webp.image_url} alt="anime image" width={200} height={200}/>
                     </div>
                     <p className="affTitle">{anime.title}</p>
-                </div>
+                </Link>
             ))}
           </div>
         </div>
@@ -59,12 +60,12 @@ export default async function Animes({ animeOrManga }) {
           <h2>UPCOMING NEXT SEASON</h2>
           <div className="pRow">
             {upcoming && upcoming.map((anime, index) => index < 6 &&(
-                <div key={anime.mal_id} className="pAff">
+                <Link href={`anime/${anime.mal_id}`} key={anime.mal_id} className="pAff">
                     <div className="affImg">
                       <Image src={anime.images.webp.image_url} alt="anime image" width={200} height={200}/>
                     </div>
                     <p className="affTitle">{anime.title}</p>
-                </div>
+                </Link>
             ))}
           </div>
         </div> : null}
@@ -73,12 +74,12 @@ export default async function Animes({ animeOrManga }) {
           <h2>ALL TIME POPULAR</h2>
           <div className="pRow">
             {popular && popular.map((anime, index) => index < 6 &&(
-                <div key={anime.mal_id} className="pAff">
+                <Link href={`anime/${anime.mal_id}`} key={anime.mal_id} className="pAff">
                     <div className="affImg">
                       <Image src={anime.images.webp.image_url} alt="anime image" width={200} height={200}/>
                     </div>
                     <p className="affTitle">{anime.title}</p>
-                </div>
+                </Link>
             ))}
           </div>
         </div>
@@ -87,7 +88,7 @@ export default async function Animes({ animeOrManga }) {
           <h2 className="text-slate-500 font-bold">TOP 100 ANIME</h2>
           <div>
             {top && top.map((anime, index) => index < 10 &&(
-              <div key={anime.mal_id} className="flex items-center max-w-6xl my-5">
+              <Link href={`anime/${anime.mal_id}`} key={anime.mal_id} className="flex items-center max-w-6xl my-5">
                 <p className="w-12 font-bold text-slate-500">#{index+1}</p>
 
                 <div className="flex justify-between w-full bg-white shadow-md p-2 rounded-md">
@@ -126,7 +127,7 @@ export default async function Animes({ animeOrManga }) {
                   </div>
                 </div>
 
-              </div>
+              </Link>
             ))}
           </div>
         </div>
