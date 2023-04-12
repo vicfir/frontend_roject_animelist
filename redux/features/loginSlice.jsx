@@ -12,16 +12,15 @@ export const login = createSlice({
     },
     reducers: {
         submit: (state, action) => {
-            // const users = useAppSelector(state => state.signupReducer[0]);
 
             const { email, password, users } = action.payload;
 
-            const hasUser = users.map(user => user.some(obj => obj.email === email && obj.password === password));
+            const hasUser = users.some(user => user.email === email && user.password === password);
             if (hasUser) {
-                alert("connecte")
+                
                 return { acces: true, denied: false, email: email }
             } else {
-                alert("connection erreur")
+                
                 return { acces: false, denied: true }
             }
         },

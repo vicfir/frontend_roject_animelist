@@ -7,10 +7,10 @@ export const signup = createSlice({
         setUser: (state, action) => {
             state.push({
                 email: action.payload.email,
-                name: action.payload.name, 
-                password: action.payload.password, 
-                favorite : []
-            })
+                name: action.payload.name,
+                password: action.payload.password,
+                favorite: []
+              });
         }
     }
 });

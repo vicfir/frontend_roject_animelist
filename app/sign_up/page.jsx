@@ -6,7 +6,6 @@ import { useAppDispatch, useAppSelector } from "u@/redux/hookndefined";
 
 export default function SignUp() {
   const dispatch = useAppDispatch();
-  // const userEmail = useAppSelector(state => state.signupReducer.email);
 
   const router = useRouter();
 
