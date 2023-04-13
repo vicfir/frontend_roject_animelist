@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "u@/redux/hookndefined";
 import { logout } from "u@/redux/features/loginSlicendefined";
+import { AiFillHeart } from "react-icons/ai";
 
 export default function Navbar() {
 
@@ -35,9 +36,14 @@ export default function Navbar() {
               <p>Forum</p>
           </div>
           {acces ? 
-            <div className="flex items-center">
-              <p className="mr-3">Hello {email}</p>  
-              <p onClick={handleLogout} className="cursor-pointer bg-blue-500 px-3 py-2 rounded-md font-semibold">Log out</p>
+            <div>
+              <div className="flex items-center">
+                <p className="mr-3">Hello {email}</p>  
+                <p onClick={handleLogout} className="cursor-pointer bg-blue-500 px-3 py-2 rounded-md font-semibold">Log out</p>
+              </div>
+              <Link href="likes" className="bg-red-500 hover:bg-red-400 cursor-pointer w-10 py-3 rounded-lg fixed right-0 bottom-3 mr-3">
+                <AiFillHeart className="fill-white ml-3"/>
+              </Link>
             </div>
           :
             <div className="">

@@ -23,7 +23,7 @@ export default function login() {
 
 
   return (
-   <div className="h-screen">
+   <div>
     <Carousel />
     
     {acces ? <h2 className="text-center mt-64 text-3xl font-bold text-slate-500">Successful connection!</h2> :
