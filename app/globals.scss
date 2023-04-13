@@ -123,10 +123,14 @@
     }
 }
 
-.searchFilter{
-    
-    p{
+.searchBar > *{
+    width: 21%;
+}
 
+.searchFilter{
+    p{
+        font-weight: 600;
+        color: rgb(121, 121, 121);
     }
 
     .filterInput{
@@ -145,6 +149,7 @@
         margin: 8px 0;
         font-weight: 600;
         padding: 0 10px;
+        color: rgb(121, 121, 121);
     }
 }
  

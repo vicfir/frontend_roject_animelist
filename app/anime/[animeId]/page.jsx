@@ -15,7 +15,7 @@ export default async function page({ params }) {
     const animDatas = await getAnimeDatas(`${animeId}`);
     
   return (
-    <div className="max-w-6xl mt-12">
+    <div className="max-w-6xl mt-12 mx-auto">
         <div className="flex w-full">
             <div className="w-[20%] ml-10">
                 <Image src={animDatas.images.webp.large_image_url} width={100} height={100} alt="anime image" className="w-full"/>

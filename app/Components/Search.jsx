@@ -37,10 +37,10 @@ export default function Search({ animeOrManga }) {
   }
 
   return (
-    <div className="flex justify-between max-w-6xl">
-      <div>
+    <div className="searchBar flex justify-around max-w-6xl">
+      <div className="searchFilter">
         <p>Search</p>
-        <input type="search" placeholder="" value={search} onChange={handleSubmit} className="shadow-md"/>
+        <input type="search" placeholder="" value={search} onChange={handleSubmit} className="filterInput shadow-md"/>
       </div>
 
       <div className="searchFilter">
@@ -86,28 +86,17 @@ export default function Search({ animeOrManga }) {
         </div>
       </div>
 
-      <div className="searchFilter">
+      {/* <div className="searchFilter">
         <p>Season</p>
         <div className="filterInput shadow-md">
           <input type="text" />
           <AiOutlineDown />
         </div> 
         <div className="dropDown overflow-auto h-40 w-full bg-white flex flex-col shadow-md">
-          {/* {error ? (
-            <p>{error}</p>
-          ) : (
-            genres.map((genre) => (
-              <Link
-                href={`search/${animeOrManga}?genres=${genre.mal_id}`}
-                key={genre.mal_id}
-              >
-                {genre.name}
-              </Link>
-            ))
-          )} */}
+        
         </div>
 
-      </div>
+      </div> */}
 
       <div className="searchFilter">
         <p>Airing Status</p>

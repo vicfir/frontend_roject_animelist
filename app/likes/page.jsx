@@ -41,7 +41,7 @@ export default function FavoritesPage() {
   }
 
   return (
-    <div className="max-w-6xl mt-12 min-h-screen">
+    <div className="max-w-6xl mt-12 min-h-screen mx-auto">
       <h1 className="font-bold text-2xl text-center text-slate-500 mb-3">Your likes</h1>
       <div>
         {Array.isArray(favorites) && favorites.length > 0 ? (

@@ -6,12 +6,13 @@ import { useAppDispatch, useAppSelector } from "u@/redux/hookndefined";
 const LikeBtn = ({animeId}) => {
     const dispatch = useAppDispatch();
     const emailLog = useAppSelector(state => state.loginReducer.email);
+    const acces = useAppSelector(state => state.loginReducer.acces);
 
   function handleFavorite() {
     const favorite = animeId;
     const email = emailLog;
 
-    dispatch(addFavorite({ favorite, email }));
+    acces ? dispatch(addFavorite({ favorite, email })) : alert('you need too login first');
   }
 
   return (
