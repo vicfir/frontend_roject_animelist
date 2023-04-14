@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "u@/redux/hookndefined";
 import { logout } from "u@/redux/features/loginSlicendefined";
 import { AiFillHeart } from "react-icons/ai";
+import { BsFillPlayFill } from "react-icons/bs";
+import { BsFillBookFill } from "react-icons/bs";
 
 export default function Navbar() {
 
@@ -17,23 +19,29 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="h-15 w-full py-3 px-3 bg-indigo-950">      
+    <nav className="h-15 w-full py-3 px-3 bg-indigo-950" id="navbar">      
         <div className="max-w-4xl items-center mx-auto text-white flex justify-between">
           <Link href="/">
               <Image src="logo.svg" alt="logo" width={50} height={50}/>
           </Link>
-          <div className="flex mr-12">
+          <div className="flex">
 
-              <div className="relative">
+              <div className="navLink relative">
                 <Link href="search/anime" className="peer">Search</Link>
-                <div className="hidden peer-hover:flex hover:flex flex-col absolute bg-white text-black">
-                  <Link href="search/anime">Anime</Link>
-                  <Link href="search/manga">Manga</Link>
+                <div className="dropDownNav hidden peer-hover:flex hover:flex flex-col absolute bg-white text-black rounded-lg">
+                  <div className="flex items-center">
+                    <BsFillPlayFill className="fill-slate-400 mr-3"/>
+                    <Link href="search/anime">Anime</Link>
+                  </div>
+                  <div className="flex items-center">
+                    <BsFillBookFill className="fill-slate-400 mr-3"/>
+                    <Link href="search/manga">Manga</Link>
+                  </div>
                 </div>
               </div>
 
-              <p>Social</p>
-              <p>Forum</p>
+              <p  className="navLink">Social</p>
+              <p  className="navLink">Forum</p>
           </div>
           {acces ? 
             <div>

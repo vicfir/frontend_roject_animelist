@@ -37,7 +37,7 @@ export default function Search({ animeOrManga }) {
   }
 
   return (
-    <div className="searchBar flex justify-around max-w-6xl">
+    <div className="searchBar my-12 flex justify-around max-w-6xl">
       <div className="searchFilter">
         <p>Search</p>
         <input type="search" placeholder="" value={search} onChange={handleSubmit} className="filterInput shadow-md"/>
@@ -45,11 +45,11 @@ export default function Search({ animeOrManga }) {
 
       <div className="searchFilter">
         <p>Genres</p>
-        <div className="filterInput shadow-md">
+        <div className="peer filterInput shadow-md">
           <input type="text" />
           <AiOutlineDown />
         </div>
-        <div className="dropDown overflow-auto h-40 w-full bg-white flex flex-col shadow-md">
+        <div className="hidden peer-hover:flex hover:flex absolute z-10 dropDown overflow-auto h-40 bg-white flex-col shadow-md">
           {error ? (
             <p>{error}</p>
           ) : (
@@ -68,11 +68,11 @@ export default function Search({ animeOrManga }) {
 
       <div className="searchFilter">
         <p>Year</p>
-        <div className="filterInput shadow-md">
+        <div className="peer filterInput shadow-md">
           <input type="text" />
           <AiOutlineDown />
         </div>
-        <div className="dropDown overflow-auto h-40 w-full bg-white flex flex-col shadow-md">
+        <div className="hidden peer-hover:flex hover:flex absolute z-10 dropDown overflow-auto h-40 bg-white flex-col shadow-md">
           {Array(62)
             .fill()
             .map((_, index) => (
@@ -100,11 +100,11 @@ export default function Search({ animeOrManga }) {
 
       <div className="searchFilter">
         <p>Airing Status</p>
-        <div className="filterInput shadow-md">
+        <div className="peer filterInput shadow-md">
           <input type="text" />
           <AiOutlineDown />
         </div>
-        <div className="dropDown w-full bg-white flex flex-col shadow-md">
+        <div className="hidden peer-hover:flex hover:flex absolute z-10 dropDown bg-white flex-col shadow-md">
           <Link href={`search/${animeOrManga}?airing=airing`}>Airing</Link>
           <Link href={`search/${animeOrManga}?airing=upcoming`}>Upcoming</Link>
         </div>

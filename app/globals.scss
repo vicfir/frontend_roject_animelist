@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+#navbar{
+    .navLink{
+        margin: 0 10px;
+        font-weight: 600;
+
+        .dropDownNav{
+            z-index: 1;
+            padding: 0 5px;
+
+            a{
+                padding: 10px 0;
+                color: rgb(142, 142, 142);
+                
+            }
+        }
+    }
+}
+
 #intro{
     background-color: rgb(1, 1, 41);
     border-radius: 30px;
@@ -143,6 +161,7 @@
 
     .dropDown{
         border-radius: 10px;
+        width: 16%;
     }
 
     .dropDown>*{
